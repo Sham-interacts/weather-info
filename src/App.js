@@ -20,7 +20,6 @@ async function fetchData (URL){
   if(data.cod === '404'){
     setError(true);
   }else{
-    console.log(data);
     setWeatherData(data);
   }
 }
@@ -41,13 +40,20 @@ useEffect(()=>{
 
   
   return (
-    <div>
-      <Header/>
-      <InputCity cityName={inputCity} inputHandler={inputHandler} submitHandler={submitHandler} />
-      {error ? (<h3 className="error"> No data found</h3>
-
-      ): (weatherData.cod ==='400' ? null : (<ShowWeather data={weatherData}/>))}
-      
+    <div className="app">
+      <div className="shell">
+        <Header />
+        <InputCity
+          cityName={inputCity}
+          inputHandler={inputHandler}
+          submitHandler={submitHandler}
+        />
+        {error ? (
+          <h3 className="error"> No data found</h3>
+        ) : weatherData.cod === "400" ? null : (
+          <ShowWeather data={weatherData} />
+        )}
+      </div>
     </div>
   );
 }

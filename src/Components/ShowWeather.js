@@ -18,9 +18,9 @@ const ShowWeather = ({ data }) => {
     <div>
       <div className="showWeather">
         <div className="weather_main">
-          <h1 className="weather-heading">City: {city}</h1>
+          <h1 className="weather_heading">City: {city}</h1>
           <h3 className="temp">
-            <p>Temperature: {tempInCelcius} C</p>
+            <p>Temperature: {Math.trunc(tempInCelcius)}°C</p>
           </h3>
           <hr />
           <div className="weatherData">
