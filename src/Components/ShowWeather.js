@@ -2,7 +2,6 @@ import React from "react";
 
 const ShowWeather = ({ data }) => {
   const city = data.name;
-  const country = data.sys ? data.sys.country : null;
   const temperature = data.main ? data.main.temp : null;
   const pressure = data.main ? data.main.pressure : null;
   const visibility = data ? data.visibility : null;
